@@ -1,38 +1,176 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: montserrat, arial, verdana;
+}
+
 .App {
-  text-align: center;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* PROGRESS BAR */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.progress-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: 40px;
+  margin-top: 70px;
 }
 
-.App-link {
-  color: #61dafb;
+.step-one {
+  background: #0acf52;
+  width: 6.333%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.step-two {
+  width: 36.667%;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+.contact {
+  position: absolute;
+  color: #ffffff;
+  top: 50%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.step-three {
+  background-color: rgba(128, 128, 128, 0.3);
+  width: 36.667%;
+}
+
+.werker {
+  position: absolute;
+  color: #ffffff;
+  top: 50%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.first-chevron-right-icon {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 30px;
+  height: 30px;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+  outline: 0;
+  background: 0 0;
+}
+
+.second-chevron-right-icon {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 30px;
+  height: 30px;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+  outline: 0;
+  background: 0 0;
+}
+
+.step-four {
+  background-color: rgba(128, 128, 128, 0.3);
+  width: 20.333%;
+}
+
+.facheck-circle {
+  position: absolute;
+  color: #ffffff;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-wrapper > div {
+  position: relative;
+}
+
+.progress-wrapper > div:after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 99.5%;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  z-index: 99;
+  height: 100%;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 50%);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+
+.progress-wrapper > div.step-one:after {
+  background-color: #0acf52;
+}
+
+.progress-wrapper > div.step-one.active:after {
+  background-color: #0acf52;
+}
+
+.progress-wrapper > div.step-two:after {
+  background-color: rgba(128, 128, 128, 0.01);
+}
+
+.progress-wrapper > div.step-two.active:after {
+  background-color: #0acf52;
+}
+
+.progress-wrapper > div.step-three:after {
+  background-color: rgba(128, 128, 128, 0.01);
+}
+
+.progress-wrapper > div.step-three.active:after {
+  background-color: #0acf52;
+}
+
+.progress-wrapper > div:last-child:after {
+  display: none;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -15px;
+  margin-top: 100px;
+}
+
+.button-style {
+  border-radius: 4px;
+  border: 0;
+  background: #038056;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px;
+  width: 90px;
+}
+
+.button-style:active {
+  transform: scale(0.98);
+}
+
+.button-style:disabled {
+  background: rgba(128, 128, 128, 0.1);
+  color: #000000;
+  cursor: not-allowed;
 }
